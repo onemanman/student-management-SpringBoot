@@ -1,9 +1,6 @@
 package com.galaxy.studentmanagement.repository;
-
 import com.galaxy.studentmanagement.model.*;
 import org.springframework.stereotype.Service;
-
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +22,6 @@ public class StudentRepositoryImpl implements StudentRepository {
     public Student getByID(int stt){
             return mockData().get(stt);
         }
-
 
 }
 
