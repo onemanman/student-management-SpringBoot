@@ -17,10 +17,9 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.getAll();
     }
 
-    //Showing information of a student by id
     @Override
     public void showStudentById(int stt) {
-        System.out.println(studentRepository.getByID(stt).toString());
+
     }
 
 }
