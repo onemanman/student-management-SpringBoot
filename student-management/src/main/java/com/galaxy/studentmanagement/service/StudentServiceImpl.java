@@ -1,4 +1,5 @@
 package com.galaxy.studentmanagement.service;
+import com.galaxy.studentmanagement.exception.NotFoundException;
 import com.galaxy.studentmanagement.repository.*;
 import com.galaxy.studentmanagement.model.Student;
 
@@ -11,29 +12,26 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     public StudentRepository studentRepository ;
 
-//    @PostConstruct
-//    public void init() {
-//        // code to initialize the bean
-//        System.out.println("Bean initialization completed.");
-//    }
-//
-//    @PreDestroy
-//    public void destroy() {
-//        // code to clean up the bean
-//        System.out.println("Bean destruction completed.");
-//    }
-
-
     @Override
     public List<Student> getStudentList() {
-        return studentRepository.getAll();
+        return studentRepository.findAll();
     }
 
     @Override
     public Student getStudentById(int stt) {
-        return studentRepository.getByID(stt);
+        return studentRepository.findById(stt).orElseThrow(() -> new NotFoundException("Student not found with ID: " + stt));
+    }
+    @Override
+    public void saveOrUpdateStudent(Student student) {
+        studentRepository.save(student);
+    }
+    @Override
+    public void deleteStudent(int id) {
+        studentRepository.deleteById(id);
     }
 }
+
+
 
 
 

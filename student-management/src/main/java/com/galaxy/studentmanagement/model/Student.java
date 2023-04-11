@@ -1,18 +1,31 @@
 package com.galaxy.studentmanagement.model;
 
-import java.io.Serializable;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "Student", schema = "dbo")
 public class Student {
+    @Id
+    @Column(name = "stt")
     public int stt;
+    @Column(name = "name")
     public String name;
-    public int age;
+    @Column(name = "gender")
     public String gender;
+    @Column(name = "math")
     public Double math;
+    @Column(name = "biology")
     public Double biology;
+    @Column(name = "literature")
     public Double literature;
+    @Column(name = "age")
+    public int age;
 
     public static String dress = "Blue pants and white shirt";
     public static final byte maxAge = 30;
+
 
     @Override
     public String toString() {
@@ -26,6 +39,8 @@ public class Student {
                 ;
     }
 
+    public Student() {
+    }
 
     public Student(int stt, String name, int age, String gender){
         this.stt = stt;
