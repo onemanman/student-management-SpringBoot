@@ -1,26 +1,38 @@
 package com.galaxy.studentmanagement.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.galaxy.studentmanagement.dto.StudentDTO;
+
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
 @Entity
-@Table(name = "Student", schema = "dbo")
+@Table(name = "Student3")
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "stt")
     public int stt;
     @Column(name = "name")
+    @NotEmpty
     public String name;
     @Column(name = "gender")
+    @Pattern(regexp = "^(male|female|other)$")
     public String gender;
+
     @Column(name = "math")
+    @Min(0)
+    @Max(value = 10)
     public Double math;
     @Column(name = "biology")
+    @Max(value = 10)
+    @Min(0)
     public Double biology;
     @Column(name = "literature")
+    @Max(value = 10)
+    @Min(0)
     public Double literature;
     @Column(name = "age")
+    @Min(value = 7)
     public int age;
 
     public static String dress = "Blue pants and white shirt";
@@ -42,84 +54,21 @@ public class Student {
     public Student() {
     }
 
-    public Student(int stt, String name, int age, String gender){
-        this.stt = stt;
+    public Student(String name, String gender, Double math, Double biology, Double literature, int age) {
         this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
-    public Student(int stt, String name, int age, String gender, Double math){
-        this.stt = stt;
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.math = math;
-    }
-    public Student(int stt, String name, int age, String gender, Double math, Double biology){
-        this.stt = stt;
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.math = math;
-        this.biology = biology;
-    }
-    public Student(int stt, String name, int age, String gender, Double math, Double biology, Double literature){
-        this.stt = stt;
-        this.name = name;
-        this.age = age;
         this.gender = gender;
         this.math = math;
         this.biology = biology;
         this.literature = literature;
+        this.age = age;
     }
-
 
     public static void studyTime(){
         System.out.println("Study time start at 7:00AM in the morning and 13:00PM afternoon");
     }
 
-
-    public int getStt(){
-        return stt;
-    }
-    public void setStt(int stt){
-        this.stt = stt;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
-    public int getAge(){
-        return age;
-    }
-    public void setAge(int age){
-        this.age = age;
-    }
-    public String getGender(){
-        return gender;
-    }
-    public void setGender(String gender){
-        this.gender = gender;
-    }
-    public Double getMath(){
-        return math;
-    }
-    public void setMath(Double math){
-        this.math = math;
-    }
-    public Double getBiology(){
-        return biology;
-    }
-    public void setBiology(Double biology){
-        this.biology = biology;
-    }
-    public Double getLiterature(){
-        return literature;
-    }
-    public void setLiterature(Double literature){
-        this.literature = literature;
+    public static Student map(StudentDTO studentDTO){
+        return new Student(studentDTO.name,studentDTO.gender,studentDTO.math,studentDTO.biology,studentDTO.literature,studentDTO.age);
     }
 }
 
