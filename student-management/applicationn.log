@@ -330,3 +330,495 @@ List of constraint violations:[
 2023-04-14 11:28:51.236  WARN 2100 --- [http-nio-8080-exec-7] c.g.s.exception.ControllerAdvice         : Validation failed for argument [0] in public com.galaxy.studentmanagement.model.Student com.galaxy.studentmanagement.controller.StudentController.createStudent(com.galaxy.studentmanagement.dto.StudentDTO) throws javax.xml.bind.ValidationException with 2 errors: [Field error in object 'studentDTO' on field 'gender': rejected value [string]; codes [Pattern.studentDTO.gender,Pattern.gender,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentDTO.gender,gender]; arguments []; default message [gender],[Ljavax.validation.constraints.Pattern$Flag;@4a0f56bd,^(male|female|other)$]; default message [Gender must be 'male','female' or 'other']] [Field error in object 'studentDTO' on field 'age': rejected value [0]; codes [Min.studentDTO.age,Min.age,Min.int,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentDTO.age,age]; arguments []; default message [age],7]; default message [Age must be greater than or equal to 7]] 
 2023-04-14 11:29:46.906  INFO 2100 --- [http-nio-8080-exec-5] c.g.s.controller.StudentController       : GET /students page=0,size=5
 2023-04-14 11:30:06.007  INFO 2100 --- [http-nio-8080-exec-10] c.g.s.controller.StudentController       : POST /students StudentDTO(name=string, gender=male, math=0.0, biology=0.0, literature=0.0, age=10)
+2023-04-14 13:46:45.237  INFO 19716 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 19716 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 13:46:45.239  INFO 19716 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 13:46:46.339  INFO 19716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 13:46:46.341  INFO 19716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 13:46:46.377  INFO 19716 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 13:46:46.378  INFO 19716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 0 JDBC repository interfaces.
+2023-04-14 13:46:46.388  INFO 19716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 13:46:46.390  INFO 19716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 13:46:46.412  INFO 19716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interfaces.
+2023-04-14 13:46:47.175  INFO 19716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 13:46:47.187  INFO 19716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 13:46:47.187  INFO 19716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 13:46:47.348  INFO 19716 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 13:46:47.349  INFO 19716 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2053 ms
+2023-04-14 13:46:47.611  INFO 19716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 13:46:48.168  INFO 19716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 13:46:48.249  INFO 19716 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 13:46:48.312  INFO 19716 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 13:46:48.470  INFO 19716 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 13:46:48.629  INFO 19716 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 13:46:49.397  INFO 19716 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 13:46:49.404  INFO 19716 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 13:46:50.413  WARN 19716 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 13:46:51.219  INFO 19716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 13:46:51.585  INFO 19716 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 6.858 seconds (JVM running for 7.383)
+2023-04-14 13:51:46.852  INFO 19716 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 13:51:46.853  INFO 19716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 13:51:46.855  INFO 19716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-14 13:51:54.234  INFO 19716 --- [http-nio-8080-exec-2] c.g.s.controller.StudentController       : GET /students page=0,size=5
+2023-04-14 14:00:52.179  INFO 19716 --- [http-nio-8080-exec-9] c.g.s.controller.StudentController       : GET /students page=0,size=5
+2023-04-14 14:06:35.333  INFO 5216 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 5216 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 14:06:35.335  INFO 5216 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 14:06:36.094  INFO 5216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:06:36.096  INFO 5216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 14:06:36.132  INFO 5216 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 14:06:36.133  INFO 5216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JDBC repository interfaces.
+2023-04-14 14:06:36.143  INFO 5216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:06:36.146  INFO 5216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 14:06:36.174  INFO 5216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interfaces.
+2023-04-14 14:06:36.737  INFO 5216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 14:06:36.747  INFO 5216 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 14:06:36.748  INFO 5216 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 14:06:36.884  INFO 5216 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 14:06:36.885  INFO 5216 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1511 ms
+2023-04-14 14:06:37.070  INFO 5216 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 14:06:37.415  INFO 5216 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 14:06:37.457  INFO 5216 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 14:06:37.500  INFO 5216 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 14:06:37.602  INFO 5216 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 14:06:37.709  INFO 5216 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 14:06:38.311  INFO 5216 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 14:06:38.318  INFO 5216 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 14:06:38.847  WARN 5216 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 14:06:39.317  INFO 5216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 14:06:39.534  INFO 5216 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.596 seconds (JVM running for 4.949)
+2023-04-14 14:10:28.062  INFO 20300 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 20300 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 14:10:28.064  INFO 20300 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 14:10:28.784  INFO 20300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:10:28.785  INFO 20300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 14:10:28.809  INFO 20300 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 14:10:28.809  INFO 20300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2023-04-14 14:10:28.818  INFO 20300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:10:28.819  INFO 20300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 14:10:28.840  INFO 20300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2023-04-14 14:10:29.409  INFO 20300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 14:10:29.417  INFO 20300 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 14:10:29.418  INFO 20300 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 14:10:29.536  INFO 20300 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 14:10:29.536  INFO 20300 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1436 ms
+2023-04-14 14:10:29.731  INFO 20300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 14:10:30.088  INFO 20300 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 14:10:30.133  INFO 20300 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 14:10:30.177  INFO 20300 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 14:10:30.288  INFO 20300 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 14:10:30.407  INFO 20300 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 14:10:31.039  INFO 20300 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 14:10:31.047  INFO 20300 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 14:10:31.634  WARN 20300 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 14:10:32.471  INFO 20300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 14:10:32.818  INFO 20300 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 5.136 seconds (JVM running for 5.48)
+2023-04-14 14:10:33.420  INFO 20300 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 14:10:33.421  INFO 20300 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 14:10:33.422  INFO 20300 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-14 14:10:38.489  INFO 20300 --- [http-nio-8080-exec-6] c.g.s.controller.StudentController       : GET /students page=0,size=10
+2023-04-14 14:10:54.178  INFO 20300 --- [http-nio-8080-exec-9] c.g.s.controller.StudentController       : GET /students page=1,size=5
+2023-04-14 14:19:28.952  INFO 2784 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 2784 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 14:19:28.955  INFO 2784 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 14:19:29.692  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:19:29.694  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 14:19:29.722  INFO 2784 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 14:19:29.722  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 JDBC repository interfaces.
+2023-04-14 14:19:29.731  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:19:29.732  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 14:19:29.757  INFO 2784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interfaces.
+2023-04-14 14:19:30.303  INFO 2784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 14:19:30.311  INFO 2784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 14:19:30.312  INFO 2784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 14:19:30.428  INFO 2784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 14:19:30.428  INFO 2784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1437 ms
+2023-04-14 14:19:30.644  INFO 2784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 14:19:30.972  INFO 2784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 14:19:31.015  INFO 2784 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 14:19:31.056  INFO 2784 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 14:19:31.166  INFO 2784 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 14:19:31.283  INFO 2784 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 14:19:31.920  INFO 2784 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 14:19:31.927  INFO 2784 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 14:19:32.470  WARN 2784 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 14:19:32.978  INFO 2784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 14:19:33.193  INFO 2784 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.617 seconds (JVM running for 4.955)
+2023-04-14 14:19:36.817  INFO 2784 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 14:19:36.820  INFO 2784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 14:19:36.822  INFO 2784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-14 14:20:02.163  WARN 2784 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:20:10.696  WARN 2784 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:20:14.585  WARN 2784 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:27:28.989  WARN 2784 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:27:41.037  WARN 2784 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:27:47.572  WARN 2784 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:28:39.149  WARN 2784 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:28:41.118  WARN 2784 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:28:41.274  WARN 2784 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:28:49.379  WARN 2784 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:28:52.948  WARN 2784 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:30:03.004  WARN 2784 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:30:04.213  WARN 2784 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:30:04.352  WARN 2784 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:30:12.737  WARN 2784 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:30:13.385  WARN 2784 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:30:13.538  WARN 2784 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:30:47.981  WARN 2784 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2023-04-14 14:31:59.709  INFO 18824 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 18824 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 14:31:59.712  INFO 18824 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 14:32:00.454  INFO 18824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:32:00.456  INFO 18824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 14:32:00.481  INFO 18824 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 14:32:00.482  INFO 18824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2023-04-14 14:32:00.492  INFO 18824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:32:00.493  INFO 18824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 14:32:00.515  INFO 18824 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+2023-04-14 14:32:01.072  INFO 18824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 14:32:01.081  INFO 18824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 14:32:01.081  INFO 18824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 14:32:01.205  INFO 18824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 14:32:01.205  INFO 18824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1456 ms
+2023-04-14 14:32:01.410  INFO 18824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 14:32:01.760  INFO 18824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 14:32:01.812  INFO 18824 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 14:32:01.853  INFO 18824 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 14:32:01.961  INFO 18824 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 14:32:02.063  INFO 18824 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 14:32:02.638  INFO 18824 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 14:32:02.646  INFO 18824 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 14:32:03.206  WARN 18824 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 14:32:03.775  INFO 18824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 14:32:04.089  INFO 18824 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.762 seconds (JVM running for 5.106)
+2023-04-14 14:32:07.174  INFO 18824 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 14:32:07.176  INFO 18824 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 14:32:07.179  INFO 18824 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-14 14:32:07.206  WARN 18824 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:32:23.947  WARN 18824 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:33:10.986  INFO 4964 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 4964 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 14:33:10.990  INFO 4964 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 14:33:11.860  INFO 4964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:33:11.861  INFO 4964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 14:33:11.893  INFO 4964 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 14:33:11.894  INFO 4964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JDBC repository interfaces.
+2023-04-14 14:33:11.902  INFO 4964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:33:11.904  INFO 4964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 14:33:11.931  INFO 4964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interfaces.
+2023-04-14 14:33:12.645  INFO 4964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 14:33:12.656  INFO 4964 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 14:33:12.657  INFO 4964 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 14:33:12.792  INFO 4964 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 14:33:12.792  INFO 4964 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1762 ms
+2023-04-14 14:33:13.020  INFO 4964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 14:33:13.401  INFO 4964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 14:33:13.458  INFO 4964 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 14:33:13.518  INFO 4964 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 14:33:13.665  INFO 4964 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 14:33:13.792  INFO 4964 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 14:33:14.526  INFO 4964 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 14:33:14.532  INFO 4964 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 14:33:15.226  WARN 4964 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 14:33:15.849  INFO 4964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 14:33:16.118  INFO 4964 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 5.574 seconds (JVM running for 5.967)
+2023-04-14 14:33:19.680  INFO 4964 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 14:33:19.682  INFO 4964 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 14:33:19.683  INFO 4964 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-14 14:33:39.202  WARN 4964 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:34:38.839  INFO 13348 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 13348 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 14:34:38.843  INFO 13348 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 14:34:39.762  INFO 13348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:34:39.763  INFO 13348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 14:34:39.796  INFO 13348 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 14:34:39.797  INFO 13348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JDBC repository interfaces.
+2023-04-14 14:34:39.806  INFO 13348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 14:34:39.808  INFO 13348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 14:34:39.829  INFO 13348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2023-04-14 14:34:40.533  INFO 13348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 14:34:40.543  INFO 13348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 14:34:40.544  INFO 13348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 14:34:40.688  INFO 13348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 14:34:40.688  INFO 13348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1800 ms
+2023-04-14 14:34:40.932  INFO 13348 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 14:34:41.348  INFO 13348 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 14:34:41.405  INFO 13348 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 14:34:41.454  INFO 13348 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 14:34:41.616  INFO 13348 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 14:34:41.746  INFO 13348 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 14:34:42.469  INFO 13348 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 14:34:42.481  INFO 13348 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 14:34:43.158  WARN 13348 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 14:34:43.846  INFO 13348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 14:34:44.158  INFO 13348 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 5.813 seconds (JVM running for 6.232)
+2023-04-14 14:34:46.314  INFO 13348 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 14:34:46.317  INFO 13348 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 14:34:46.318  INFO 13348 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-14 14:34:53.898  WARN 13348 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 14:35:16.602  WARN 13348 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2023-04-14 14:35:18.946  WARN 13348 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2023-04-14 14:50:01.819  INFO 13348 --- [http-nio-8080-exec-2] c.g.s.controller.StudentController       : GET /students page=0,size=5
+2023-04-14 16:17:38.284  INFO 13348 --- [http-nio-8080-exec-8] c.g.s.controller.StudentController       : GET /students page=0,size=5
+2023-04-14 16:17:50.915  WARN 13348 --- [http-nio-8080-exec-9] c.g.s.exception.ControllerAdvice         : Validation failed for argument [0] in public com.galaxy.studentmanagement.model.Student com.galaxy.studentmanagement.controller.StudentController.createStudent(com.galaxy.studentmanagement.dto.StudentDTO) throws javax.xml.bind.ValidationException with 2 errors: [Field error in object 'studentDTO' on field 'age': rejected value [0]; codes [Min.studentDTO.age,Min.age,Min.int,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentDTO.age,age]; arguments []; default message [age],7]; default message [Age must be greater than or equal to 7]] [Field error in object 'studentDTO' on field 'gender': rejected value [string]; codes [Pattern.studentDTO.gender,Pattern.gender,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentDTO.gender,gender]; arguments []; default message [gender],[Ljavax.validation.constraints.Pattern$Flag;@4fbaec18,^(male|female|other)$]; default message [Gender must be 'male','female' or 'other']] 
+2023-04-14 17:00:12.756  INFO 2008 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 2008 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 17:00:12.759  INFO 2008 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 17:00:13.516  INFO 2008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:00:13.517  INFO 2008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 17:00:13.543  INFO 2008 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 17:00:13.544  INFO 2008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
+2023-04-14 17:00:13.553  INFO 2008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:00:13.555  INFO 2008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 17:00:13.586  INFO 2008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interfaces.
+2023-04-14 17:00:14.171  INFO 2008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 17:00:14.184  INFO 2008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 17:00:14.184  INFO 2008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 17:00:14.319  INFO 2008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 17:00:14.319  INFO 2008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1525 ms
+2023-04-14 17:00:14.514  INFO 2008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 17:00:14.861  INFO 2008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 17:00:14.907  INFO 2008 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 17:00:14.951  INFO 2008 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 17:00:15.071  INFO 2008 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 17:00:15.188  INFO 2008 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 17:00:15.770  INFO 2008 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 17:00:15.779  INFO 2008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 17:00:16.326  WARN 2008 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 17:00:16.813  INFO 2008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 17:00:17.015  INFO 2008 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.646 seconds (JVM running for 5.029)
+2023-04-14 17:00:20.708  INFO 2008 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 17:00:20.710  INFO 2008 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 17:00:20.711  INFO 2008 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-14 17:00:33.173  WARN 2008 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 17:02:53.174  WARN 2008 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Required URI template variable 'stt' for method parameter type int is not present]
+2023-04-14 17:02:59.741  INFO 16992 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 16992 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 17:02:59.743  INFO 16992 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 17:03:00.469  INFO 16992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:03:00.470  INFO 16992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 17:03:00.495  INFO 16992 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 17:03:00.496  INFO 16992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2023-04-14 17:03:00.504  INFO 16992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:03:00.506  INFO 16992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 17:03:00.533  INFO 16992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 1 JPA repository interfaces.
+2023-04-14 17:03:01.116  INFO 16992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 17:03:01.124  INFO 16992 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 17:03:01.124  INFO 16992 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 17:03:01.268  INFO 16992 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 17:03:01.269  INFO 16992 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1488 ms
+2023-04-14 17:03:01.455  INFO 16992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 17:03:01.829  INFO 16992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 17:03:01.879  INFO 16992 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 17:03:01.919  INFO 16992 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 17:03:02.025  INFO 16992 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 17:03:02.148  INFO 16992 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 17:03:02.836  INFO 16992 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 17:03:02.843  INFO 16992 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 17:03:03.423  WARN 16992 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 17:03:03.963  INFO 16992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 17:03:04.181  INFO 16992 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.836 seconds (JVM running for 5.196)
+2023-04-14 17:03:14.671  INFO 16992 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 17:03:14.672  INFO 16992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 17:03:14.673  INFO 16992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-14 17:03:14.688  WARN 16992 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2023-04-14 17:11:24.992  INFO 16432 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 16432 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 17:11:24.994  INFO 16432 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 17:11:25.720  INFO 16432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:11:25.722  INFO 16432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 17:11:25.748  INFO 16432 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 17:11:25.749  INFO 16432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
+2023-04-14 17:11:25.759  INFO 16432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:11:25.760  INFO 16432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 17:11:25.783  INFO 16432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+2023-04-14 17:11:26.337  INFO 16432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 17:11:26.346  INFO 16432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 17:11:26.347  INFO 16432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 17:11:26.458  INFO 16432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 17:11:26.458  INFO 16432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1428 ms
+2023-04-14 17:11:26.681  INFO 16432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 17:11:27.070  INFO 16432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 17:11:27.118  INFO 16432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 17:11:27.159  INFO 16432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 17:11:27.263  INFO 16432 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 17:11:27.377  INFO 16432 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 17:11:28.033  INFO 16432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 17:11:28.040  INFO 16432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 17:11:28.631  WARN 16432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 17:11:29.175  INFO 16432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 17:11:29.422  INFO 16432 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.813 seconds (JVM running for 5.168)
+2023-04-14 17:11:33.687  INFO 16432 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 17:11:33.689  INFO 16432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 17:11:33.693  INFO 16432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-14 17:11:33.709  WARN 16432 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2023-04-14 17:11:55.437  WARN 16432 --- [http-nio-8080-exec-8] c.g.s.exception.ControllerAdvice         : Validation failed for classes [com.galaxy.studentmanagement.model.Student] during update time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Biology score is between 0 to 10', propertyPath=biology, rootBeanClass=class com.galaxy.studentmanagement.model.Student, messageTemplate='Biology score is between 0 to 10'}
+]
+2023-04-14 17:12:56.049  INFO 4952 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 4952 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 17:12:56.052  INFO 4952 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 17:12:56.785  INFO 4952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:12:56.786  INFO 4952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 17:12:56.812  INFO 4952 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 17:12:56.813  INFO 4952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 0 JDBC repository interfaces.
+2023-04-14 17:12:56.821  INFO 4952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:12:56.822  INFO 4952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 17:12:56.845  INFO 4952 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interfaces.
+2023-04-14 17:12:57.404  INFO 4952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 17:12:57.412  INFO 4952 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 17:12:57.413  INFO 4952 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 17:12:57.561  INFO 4952 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 17:12:57.561  INFO 4952 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1470 ms
+2023-04-14 17:12:57.731  INFO 4952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 17:12:58.082  INFO 4952 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 17:12:58.125  INFO 4952 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 17:12:58.172  INFO 4952 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 17:12:58.285  INFO 4952 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 17:12:58.406  INFO 4952 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 17:12:58.976  INFO 4952 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 17:12:58.983  INFO 4952 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 17:12:59.577  WARN 4952 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 17:13:00.097  INFO 4952 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 17:13:00.349  INFO 4952 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.688 seconds (JVM running for 5.052)
+2023-04-14 17:18:10.134  INFO 13092 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 13092 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 17:18:10.138  INFO 13092 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 17:18:10.859  INFO 13092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:18:10.861  INFO 13092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 17:18:10.886  INFO 13092 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 17:18:10.887  INFO 13092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2023-04-14 17:18:10.898  INFO 13092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:18:10.899  INFO 13092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 17:18:10.922  INFO 13092 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interfaces.
+2023-04-14 17:18:11.506  INFO 13092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 17:18:11.514  INFO 13092 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 17:18:11.514  INFO 13092 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 17:18:11.637  INFO 13092 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 17:18:11.637  INFO 13092 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1464 ms
+2023-04-14 17:18:11.837  INFO 13092 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 17:18:12.193  INFO 13092 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 17:18:12.243  INFO 13092 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 17:18:12.285  INFO 13092 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 17:18:12.395  INFO 13092 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 17:18:12.498  INFO 13092 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 17:18:13.126  INFO 13092 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 17:18:13.134  INFO 13092 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 17:18:13.703  WARN 13092 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 17:18:14.191  INFO 13092 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 17:18:14.419  INFO 13092 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.674 seconds (JVM running for 5.028)
+2023-04-14 17:18:24.695  INFO 13092 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 17:18:24.696  INFO 13092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 17:18:24.702  INFO 13092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-04-14 17:22:40.452  INFO 18768 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 18768 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 17:22:40.454  INFO 18768 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 17:22:41.205  INFO 18768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:22:41.206  INFO 18768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 17:22:41.234  INFO 18768 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 17:22:41.234  INFO 18768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 JDBC repository interfaces.
+2023-04-14 17:22:41.242  INFO 18768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:22:41.244  INFO 18768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 17:22:41.268  INFO 18768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interfaces.
+2023-04-14 17:22:41.911  INFO 18768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 17:22:41.924  INFO 18768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 17:22:41.926  INFO 18768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 17:22:42.149  INFO 18768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 17:22:42.149  INFO 18768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1660 ms
+2023-04-14 17:22:42.341  INFO 18768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 17:22:42.705  INFO 18768 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 17:22:42.750  INFO 18768 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 17:22:42.793  INFO 18768 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 17:22:42.913  INFO 18768 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 17:22:43.060  INFO 18768 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 17:22:43.867  INFO 18768 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 17:22:43.874  INFO 18768 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 17:22:44.431  WARN 18768 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 17:22:44.945  INFO 18768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 17:22:45.176  INFO 18768 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 5.108 seconds (JVM running for 5.457)
+2023-04-14 17:22:54.135  INFO 18768 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 17:22:54.136  INFO 18768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 17:22:54.140  INFO 18768 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-04-14 17:23:00.110 ERROR 18768 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Optional double parameter 'math' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.] with root cause
+
+java.lang.IllegalStateException: Optional double parameter 'math' is present but cannot be translated into a null value due to being declared as a primitive type. Consider declaring it as object wrapper for the corresponding primitive type.
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.handleNullValue(AbstractNamedValueMethodArgumentResolver.java:263) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:116) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668) ~[javax.servlet-api-4.0.1.jar:4.0.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.20.jar:5.3.20]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750) ~[javax.servlet-api-4.0.1.jar:4.0.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.20.jar:5.3.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.63.jar:9.0.63]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2023-04-14 17:24:13.002  INFO 14900 --- [main] c.g.s.StudentManagementApplication       : Starting StudentManagementApplication using Java 11.0.17 on nvctri with PID 14900 (D:\Java\project\student-management2\student-management\build\classes\java\main started by nvctri in D:\Java\project\student-management2\student-management)
+2023-04-14 17:24:13.006  INFO 14900 --- [main] c.g.s.StudentManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-14 17:24:13.787  INFO 14900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:24:13.788  INFO 14900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-04-14 17:24:13.813  INFO 14900 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.galaxy.studentmanagement.repository.StudentRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-04-14 17:24:13.814  INFO 14900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2023-04-14 17:24:13.823  INFO 14900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 17:24:13.824  INFO 14900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 17:24:13.847  INFO 14900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+2023-04-14 17:24:14.395  INFO 14900 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-14 17:24:14.404  INFO 14900 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-14 17:24:14.405  INFO 14900 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2023-04-14 17:24:14.533  INFO 14900 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-14 17:24:14.534  INFO 14900 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1486 ms
+2023-04-14 17:24:14.735  INFO 14900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-14 17:24:15.115  INFO 14900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-14 17:24:15.162  INFO 14900 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 17:24:15.203  INFO 14900 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.33
+2023-04-14 17:24:15.321  INFO 14900 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 17:24:15.463  INFO 14900 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2023-04-14 17:24:16.133  INFO 14900 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 17:24:16.140  INFO 14900 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 17:24:16.728  WARN 14900 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-14 17:24:17.214  INFO 14900 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 17:24:17.454  INFO 14900 --- [main] c.g.s.StudentManagementApplication       : Started StudentManagementApplication in 4.835 seconds (JVM running for 5.188)
+2023-04-14 17:24:21.071  INFO 14900 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-14 17:24:21.072  INFO 14900 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-14 17:24:21.078  INFO 14900 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-04-14 17:25:25.034  WARN 14900 --- [http-nio-8080-exec-3] c.g.s.exception.ControllerAdvice         : Student not found with ID: 100
+2023-04-14 17:28:02.955  INFO 14900 --- [http-nio-8080-exec-9] c.g.s.controller.StudentController       : GET /students page=0,size=5
+2023-04-14 17:28:10.485  WARN 14900 --- [http-nio-8080-exec-1] c.g.s.exception.ControllerAdvice         : Validation failed for argument [0] in public com.galaxy.studentmanagement.model.Student com.galaxy.studentmanagement.controller.StudentController.createStudent(com.galaxy.studentmanagement.dto.StudentDTO) throws javax.xml.bind.ValidationException with 2 errors: [Field error in object 'studentDTO' on field 'age': rejected value [0]; codes [Min.studentDTO.age,Min.age,Min.int,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentDTO.age,age]; arguments []; default message [age],7]; default message [Age must be greater than or equal to 7]] [Field error in object 'studentDTO' on field 'gender': rejected value [string]; codes [Pattern.studentDTO.gender,Pattern.gender,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentDTO.gender,gender]; arguments []; default message [gender],[Ljavax.validation.constraints.Pattern$Flag;@364012ea,^(male|female|other)$]; default message [Gender must be 'male','female' or 'other']] 
+2023-04-14 17:28:15.262  WARN 14900 --- [http-nio-8080-exec-2] c.g.s.exception.ControllerAdvice         : Validation failed for argument [0] in public com.galaxy.studentmanagement.model.Student com.galaxy.studentmanagement.controller.StudentController.createStudent(com.galaxy.studentmanagement.dto.StudentDTO) throws javax.xml.bind.ValidationException: [Field error in object 'studentDTO' on field 'gender': rejected value [string]; codes [Pattern.studentDTO.gender,Pattern.gender,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [studentDTO.gender,gender]; arguments []; default message [gender],[Ljavax.validation.constraints.Pattern$Flag;@364012ea,^(male|female|other)$]; default message [Gender must be 'male','female' or 'other']] 
+2023-04-14 17:28:19.939  INFO 14900 --- [http-nio-8080-exec-3] c.g.s.controller.StudentController       : POST /students StudentDTO(name=string, gender=male, math=0.0, biology=0.0, literature=0.0, age=8)
+2023-04-14 17:28:25.807  INFO 14900 --- [http-nio-8080-exec-4] c.g.s.controller.StudentController       : Delete /students/4
+2023-04-14 17:28:32.015  INFO 14900 --- [http-nio-8080-exec-5] c.g.s.controller.StudentController       : GET /student/2
+2023-04-14 17:28:36.659  INFO 14900 --- [http-nio-8080-exec-6] c.g.s.controller.StudentController       : GET /student/16
+2023-04-14 17:28:39.600  INFO 14900 --- [http-nio-8080-exec-7] c.g.s.controller.StudentController       : GET /student/17
+2023-04-14 17:28:42.738  INFO 14900 --- [http-nio-8080-exec-8] c.g.s.controller.StudentController       : GET /student/18
+2023-04-14 17:28:42.842  WARN 14900 --- [http-nio-8080-exec-8] c.g.s.exception.ControllerAdvice         : Student not found with ID: 18
+2023-04-14 17:29:06.780  INFO 14900 --- [http-nio-8080-exec-10] c.g.s.controller.StudentController       : GET /student/5
+2023-04-14 17:30:03.299  INFO 14900 --- [http-nio-8080-exec-2] c.g.s.controller.StudentController       : GET /students/ age=17
+2023-04-14 17:30:10.048  INFO 14900 --- [http-nio-8080-exec-3] c.g.s.controller.StudentController       : GET /students/ name=kim

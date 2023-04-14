@@ -11,7 +11,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.ValidationException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+
+
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -35,9 +39,16 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student updateStudent(Student student) {
-        if (studentRepository.findById(student.stt).isEmpty()){
-            throw new NotFoundException("Student not found with ID: " + student.stt);
+    public Student updateStudent(int stt, HashMap<String, Double> updateMap) {
+        Student student = studentRepository.findById(stt).orElseThrow(() -> new NotFoundException("Student not found with ID: " + stt));
+        if (updateMap.containsKey("math")) {
+            student.setMath(updateMap.get("math"));
+        }
+        if (updateMap.containsKey("biology")) {
+            student.setBiology(updateMap.get("biology"));
+        }
+        if (updateMap.containsKey("literature")) {
+            student.setLiterature(updateMap.get("literature"));
         }
         return studentRepository.save(student);
     }

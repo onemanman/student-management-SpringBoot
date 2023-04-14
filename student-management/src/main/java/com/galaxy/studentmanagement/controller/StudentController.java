@@ -14,6 +14,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.xml.bind.ValidationException;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -28,12 +29,14 @@ public class StudentController {
         this.studentService = studentService;
     }
     @GetMapping()
-    public Page<Student> getAllStudents(@RequestParam(value = "page",defaultValue = "0") int page,
+    public List<Student> getAllStudents(@RequestParam(value = "page",defaultValue = "0") int page,
                                         @RequestParam(value = "size",defaultValue = "10") int size){
         Pageable pageable = PageRequest.of(page, size);
         Page<Student> students = studentService.getStudentList(pageable);
+        List<Student> studentList = students.getContent();
         log.info("GET /students page={},size={}",page,size);
-        return students;
+        System.out.println(students);
+        return studentList;
     }
 
     @GetMapping("/name")
@@ -60,18 +63,21 @@ public class StudentController {
         log.info("POST /students {}",studentDTO);
         return studentService.createStudent(studentDTO);
     }
-    @PutMapping()
-    public Student updateStudent(@Valid @RequestParam("stt") int stt,
-                                 @Valid @RequestParam("math") double math,
-                                 @Valid @RequestParam("biology") double biology,
-                                 @Valid @RequestParam("literature") double literature ){
+
+    @PutMapping("/{stt}")
+    public Student updateStudent(@PathVariable int stt,
+                                                 @RequestParam(value = "math",required = false) Double math,
+                                                 @RequestParam(value = "biology",required = false) Double biology,
+                                                 @RequestParam(value = "literature",required = false) Double literature){
         Student student = studentService.getStudentById(stt);
-        student.setMath(math);
-        student.setBiology(biology);
-        student.setLiterature(literature);
-        log.info("PUT /students?Math={}andBiology={}andLiterature={}",math,biology,literature);
-        return studentService.updateStudent(student);
+        HashMap<String, Double> updateMap = new HashMap<>();
+        updateMap.put("math",math);
+        updateMap.put("biology",biology);
+        updateMap.put("literature",literature);
+//        log.info("PUT /students?math={}&biology={}&literature={}",updateMap.get("math"),updateMap.get("biology"),updateMap.get("literature"));
+        return studentService.updateStudent(stt,updateMap);
     }
+
     @DeleteMapping("/{id}")
     public StudentResponse deleteStudent(@PathVariable int id) {
         log.info("Delete /students/{}",id);

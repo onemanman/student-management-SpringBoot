@@ -21,17 +21,21 @@ public class ControllerAdvice {
         APIException APIException = new APIException(HttpStatus.NOT_FOUND.value(), ex.getMessage());
         return new ResponseEntity<>(APIException, HttpStatus.NOT_FOUND);
     }
+
     @ExceptionHandler(ValidationException.class)
     public ResponseEntity<APIException> handleValidationException(ValidationException ex){
         log.warn(ex.getMessage());
         APIException APIException =  new APIException(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
         return new ResponseEntity<>(APIException,HttpStatus.BAD_REQUEST);
-    }@ExceptionHandler(ConstraintViolationException.class)
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<APIException> handleConstraintViolationException(ConstraintViolationException ex){
         log.warn(ex.getMessage());
         APIException APIException =  new APIException(HttpStatus.BAD_REQUEST.value(), ex.getMessage());
         return new ResponseEntity<>(APIException,HttpStatus.BAD_REQUEST);
     }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<APIException> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex){
         log.warn(ex.getMessage());

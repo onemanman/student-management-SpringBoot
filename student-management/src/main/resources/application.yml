@@ -4,6 +4,9 @@ Spring:
       username: tm_app
       password: Sql#1234
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jooq:
+    sql-dialect: SQLSERVER
+    sql-init-mode: embedded
 logging:
   file:
     path: com/galaxy/studentmanagement
