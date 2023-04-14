@@ -6,6 +6,8 @@ import com.galaxy.studentmanagement.repository.*;
 import com.galaxy.studentmanagement.model.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.ValidationException;
@@ -17,9 +19,10 @@ public class StudentServiceImpl implements StudentService {
     public StudentRepository studentRepository ;
 
     @Override
-    public List<Student> getStudentList() {
-        return studentRepository.findAll();
+    public Page<Student> getStudentList(Pageable pageable) {
+        return studentRepository.findAll(pageable);
     }
+
 
     @Override
     public Student getStudentById(int stt) {
@@ -28,19 +31,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student createStudent(StudentDTO studentDTO) throws ValidationException {
-        if (studentDTO.getName().isEmpty()){
-            throw new ValidationException("Name field can't be empty");
-        }
-        if (studentDTO.getAge() < 7) {
-            throw new ValidationException("Age must be greater than or equal to 7.");
-        }
-        if (!(studentDTO.getGender().equals("male") || studentDTO.getGender().equals("female") || studentDTO.getGender().equals("other"))){
-            throw new ValidationException("Gender must be 'male', 'female' or 'other' ");
-        }
-        if (studentDTO.getMath() > 10 || studentDTO.getBiology() > 10 || studentDTO.getLiterature() > 10 ||
-            studentDTO.getMath() < 0 || studentDTO.getBiology() < 0 || studentDTO.getLiterature() < 0){
-            throw new ValidationException("Score value must be between 0 and 10.");
-        }
         return studentRepository.save(Student.map(studentDTO));
     }
 
