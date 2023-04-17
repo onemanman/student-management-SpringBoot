@@ -64,8 +64,6 @@ public class Student {
     public static Student map(StudentDTO studentDTO){
         return new Student(studentDTO.name,studentDTO.gender,studentDTO.math,studentDTO.biology,studentDTO.literature,studentDTO.age);
     }
-    public static Student mapScore(StudentScoreDTO studentScoreDTO){
-        return new Student(studentScoreDTO.math,studentScoreDTO.biology,studentScoreDTO.literature);
-    }
+
 }
 

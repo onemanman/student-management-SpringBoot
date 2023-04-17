@@ -1,12 +1,12 @@
-Spring:
+spring:
   datasource:
       url: jdbc:sqlserver://11.11.7.142:1433;databaseName=student-management-tri
       username: tm_app
       password: Sql#1234
       driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jooq:
-    sql-dialect: SQLSERVER
-    sql-init-mode: embedded
+jooq:
+  sql:
+    dialect: SQLSERVER
 logging:
   file:
     path: com/galaxy/studentmanagement

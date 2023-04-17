@@ -1,16 +1,16 @@
 package com.galaxy.studentmanagement.model;
 
 public class StudentResponse {
-    private String deleteMessage;
+    private String message;
     public StudentResponse(String deleteMessage) {
-        this.deleteMessage = deleteMessage;
+        this.message = message;
     }
 
     public String getDeleteMessage() {
-        return deleteMessage;
+        return message;
     }
 
-    public void setDeleteMessage(String deleteMessage) {
-        this.deleteMessage = deleteMessage;
+    public void setDeleteMessage(String message) {
+        this.message = message;
     }
 }

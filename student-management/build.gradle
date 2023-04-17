@@ -32,37 +32,12 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
+	implementation 'org.jooq:jooq:3.14.12'
+	implementation 'org.jooq:jooq-meta:3.14.12'
+	implementation 'org.jooq:jooq-codegen:3.14.12'
 
 }
-
-
-
-//jooq {
-//	version = '3.15.2'
-//	edition = 'OSS'
-//	// Configuration for the code generator
-//	configurations {
-//		main {
-//			jdbc {
-//				driver = 'com.microsoft.sqlserver.jdbc.SQLServerDriver'
-//				url = 'jdbc:sqlserver://11.11.7.142:1433;databaseName=student-management-tri'
-//				user = 'tm_app'
-//				password = 'Sql#1234'
-//			}
-//			generator {
-//				name = 'org.jooq.codegen.DefaultGenerator'
-//				database {
-//					name = 'Student'
-//					inputSchema = 'dbo'
-//				}
-//				target {
-//					packageName = 'com.galaxy.studentmanagement.generated'
-//					directory = 'src/main/java'
-//				}
-//			}
-//		}
-//	}
-//}
 
 
 tasks.named('test') {

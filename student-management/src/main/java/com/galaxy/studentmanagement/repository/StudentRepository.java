@@ -1,13 +1,14 @@
 package com.galaxy.studentmanagement.repository;
 
+import com.galaxy.studentmanagement.dto.StudentDTO;
 import com.galaxy.studentmanagement.model.Student;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface StudentRepository extends JpaRepository<Student, Integer> {
-    List<Student> findByName(String name);
-    List<Student> findByAge(int age);
+public interface StudentRepository {
+    List<Student> getAll();
+    Student findById(int stt);
+    Student create(StudentDTO studentDTO);
+    void deleteById(int stt);
+
 }
