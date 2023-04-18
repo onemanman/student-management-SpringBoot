@@ -40,14 +40,13 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.create(studentDTO);
     }
 
+    @Override
+    public Student updateStudent(Student student) {
+        return studentRepository.update(student);
+    }
 
 
-//    @Override
-//    public Student createStudent(StudentDTO studentDTO) throws ValidationException {
-//        return studentRepository.save(Student.map(studentDTO));
-//    }
-//
-//    @Override
+    //    @Override
 //    public Student updateStudent(int stt, HashMap<String, Double> updateMap) {
 //        Student student = studentRepository.findById(stt).orElseThrow(() -> new NotFoundException("Student not found with ID: " + stt));
 //        if (updateMap.containsKey("math")) {

@@ -11,7 +11,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.xml.bind.ValidationException;
-import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -28,8 +27,7 @@ public class StudentController {
     @GetMapping()
     public List<Student> getAllStudents(){
         List<Student> students = studentService.getStudentList();
-        log.info("GET /students page={},size={}");
-        System.out.println(students);
+        log.info("GET /students");
         return students;
     }
 
@@ -43,24 +41,15 @@ public class StudentController {
     @PostMapping()
     public Student createStudent(@Valid @RequestBody StudentDTO studentDTO) throws ValidationException {
         log.info("POST /students {}",studentDTO);
-        System.out.println(studentDTO.toString());
         return studentService.createStudent(studentDTO);
     }
-//
-//    @PutMapping("/{stt}")
-//    public Student updateStudent(@PathVariable int stt,
-//                                                 @RequestParam(value = "math",required = false) Double math,
-//                                                 @RequestParam(value = "biology",required = false) Double biology,
-//                                                 @RequestParam(value = "literature",required = false) Double literature){
-//        Student student = studentService.getStudentById(stt);
-//        HashMap<String, Double> updateMap = new HashMap<>();
-//        updateMap.put("math",math);
-//        updateMap.put("biology",biology);
-//        updateMap.put("literature",literature);
-////        log.info("PUT /students?math={}&biology={}&literature={}",updateMap.get("math"),updateMap.get("biology"),updateMap.get("literature"));
-//        return studentService.updateStudent(stt,updateMap);
-//    }
-//
+
+    @PutMapping("/{stt}")
+    public Student updateStudent(@RequestBody Student student){
+        log.info("PUT /students {}",student);
+        return studentService.updateStudent(student);
+    }
+
     @DeleteMapping("/{id}")
     public StudentResponse deleteStudent(@PathVariable int id) {
         log.info("Delete /students/{}",id);
