@@ -9,6 +9,7 @@ public interface StudentRepository {
     List<Student> getAll();
     Student findById(int stt);
     Student create(StudentDTO studentDTO);
+    Student update(Student student);
     void deleteById(int stt);
 
 }

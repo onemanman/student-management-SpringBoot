@@ -1,6 +1,7 @@
 package com.galaxy.studentmanagement.repository;
 
 import com.galaxy.studentmanagement.dto.StudentDTO;
+import com.galaxy.studentmanagement.exception.NotFoundException;
 import com.galaxy.studentmanagement.model.Student;
 import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
@@ -14,7 +15,6 @@ import static org.jooq.impl.DSL.jsonbTable;
 import static org.jooq.impl.DSL.table;
 @Repository
 public class StudentRepositoryImpl implements StudentRepository {
-    String name = "Student3.name";
     private final DSLContext dsl;
 
     public StudentRepositoryImpl(DSLContext dsl) {
@@ -44,6 +44,22 @@ public class StudentRepositoryImpl implements StudentRepository {
                         .fetchOne())
                 .into(Integer.class);
         return findById(stt);
+    }
+
+    @Override
+    public Student update(Student student) {
+        if (findById(student.getStt()) == null) {throw new NotFoundException("Student not found with ID: " + student.getStt());
+        }
+        dsl.update(table("Student3"))
+                .set(DSL.field("name"),student.getName())
+                .set(DSL.field("age"),student.getAge())
+                .set(DSL.field("gender"),student.getGender())
+                .set(DSL.field("math"),student.getMath())
+                .set(DSL.field("biology"),student.getBiology())
+                .set(DSL.field("literature"),student.getLiterature())
+                .where(DSL.field("stt").eq(student.getStt()))
+                .execute();
+        return findById(student.getStt());
     }
 
     @Override

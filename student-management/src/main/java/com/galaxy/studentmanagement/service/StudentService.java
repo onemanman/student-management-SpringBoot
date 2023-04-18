@@ -10,8 +10,7 @@ public interface StudentService {
 
     Student getStudentById(int stt);
     Student createStudent(StudentDTO studentDTO) throws ValidationException;
-//    Student updateStudent(int stt, HashMap<String, Double> updateMap);
+    Student updateStudent(Student student);
     StudentResponse deleteStudent(int id);
-//    List<Student> getStudentByName(String name);
-//    List<Student> getStudentByAge(int age);
+
 }
