@@ -31,6 +31,7 @@ public class StudentController {
         return students;
     }
 
+
     @GetMapping(value = "/{stt}")
     public Student getStudentById(@PathVariable int stt){
         log.info("GET /student/{}",stt);
