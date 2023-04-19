@@ -14,4 +14,7 @@ logging:
   level:
     root: INFO
     com.galaxy.studentmanagement: INFO
-
+    org:
+      jooq:
+        tools:
+          LoggerListener: OFF

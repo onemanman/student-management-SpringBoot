@@ -1,14 +1,12 @@
 package com.galaxy.studentmanagement.service;
+
 import com.galaxy.studentmanagement.dto.StudentDTO;
 import com.galaxy.studentmanagement.exception.NotFoundException;
-import com.galaxy.studentmanagement.model.StudentResponse;
-import com.galaxy.studentmanagement.repository.*;
 import com.galaxy.studentmanagement.model.Student;
-
+import com.galaxy.studentmanagement.model.StudentResponse;
+import com.galaxy.studentmanagement.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
-import javax.xml.bind.ValidationException;
 import java.util.List;
 
 
@@ -33,8 +31,6 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findById(stt);
     }
 
-
-
     @Override
     public Student createStudent(StudentDTO studentDTO) {
         return studentRepository.create(studentDTO);
@@ -45,22 +41,6 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.update(student);
     }
 
-
-    //    @Override
-//    public Student updateStudent(int stt, HashMap<String, Double> updateMap) {
-//        Student student = studentRepository.findById(stt).orElseThrow(() -> new NotFoundException("Student not found with ID: " + stt));
-//        if (updateMap.containsKey("math")) {
-//            student.setMath(updateMap.get("math"));
-//        }
-//        if (updateMap.containsKey("biology")) {
-//            student.setBiology(updateMap.get("biology"));
-//        }
-//        if (updateMap.containsKey("literature")) {
-//            student.setLiterature(updateMap.get("literature"));
-//        }
-//        return studentRepository.save(student);
-//    }
-//
     @Override
     public StudentResponse deleteStudent(int id) {
         if (studentRepository.findById(id) == null){

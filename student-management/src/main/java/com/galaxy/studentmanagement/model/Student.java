@@ -1,7 +1,6 @@
 package com.galaxy.studentmanagement.model;
 
 import com.galaxy.studentmanagement.dto.StudentDTO;
-import com.galaxy.studentmanagement.dto.StudentScoreDTO;
 import lombok.*;
 
 import javax.persistence.*;

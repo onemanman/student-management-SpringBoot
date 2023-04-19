@@ -36,9 +36,8 @@ dependencies {
 	implementation 'org.jooq:jooq:3.14.12'
 	implementation 'org.jooq:jooq-meta:3.14.12'
 	implementation 'org.jooq:jooq-codegen:3.14.12'
-
+	implementation 'org.liquibase:liquibase-core:4.5.0'
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()
