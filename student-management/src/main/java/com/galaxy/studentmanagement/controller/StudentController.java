@@ -46,6 +46,7 @@ public class StudentController {
 
     @PutMapping("/{stt}")
     public Student updateStudent(@RequestBody Student student){
+
         log.info("PUT /students {}",student);
         return studentService.updateStudent(student);
     }

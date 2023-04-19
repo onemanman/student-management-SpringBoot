@@ -2,7 +2,7 @@ package com.galaxy.studentmanagement.model;
 
 public class StudentResponse {
     private String message;
-    public StudentResponse(String deleteMessage) {
+    public StudentResponse(String message) {
         this.message = message;
     }
 
