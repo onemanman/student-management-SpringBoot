@@ -5,6 +5,7 @@ import com.galaxy.studentmanagement.exception.NotFoundException;
 import com.galaxy.studentmanagement.model.Student;
 import com.galaxy.studentmanagement.model.StudentResponse;
 import com.galaxy.studentmanagement.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
 
+    @Autowired
     public StudentServiceImpl(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
@@ -28,6 +30,7 @@ public class StudentServiceImpl implements StudentService {
     public Student getStudentById(int stt) {
         if (studentRepository.findById(stt) == null)
             throw new NotFoundException("Student not found with ID: " + stt);
+
         return studentRepository.findById(stt);
     }
 

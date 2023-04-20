@@ -8,13 +8,12 @@ jooq:
   sql:
     dialect: SQLSERVER
 logging:
-  file:
-    path: com/galaxy/studentmanagement
-    name: applicationn.log
   level:
     root: INFO
-    com.galaxy.studentmanagement: INFO
+    com.galaxy.studentmanagement: TRACE
     org:
       jooq:
         tools:
-          LoggerListener: OFF
+          LoggerListenerWRR: INFO
+
+

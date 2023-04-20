@@ -13,6 +13,8 @@ import javax.validation.Valid;
 import javax.xml.bind.ValidationException;
 import java.util.List;
 
+
+
 @RestController
 @Slf4j
 @RequestMapping(value = "/students", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -33,14 +35,14 @@ public class StudentController {
 
     @GetMapping(value = "/{stt}")
     public Student getStudentById(@PathVariable int stt){
-        log.info("GET /student/{}",stt);
+        log.debug("GET /student/{}",stt);
          return studentService.getStudentById(stt);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping()
     public Student createStudent(@Valid @RequestBody StudentDTO studentDTO) throws ValidationException {
-        log.info("POST /students {}",studentDTO);
+        log.trace("POST /students {}",studentDTO);
         return studentService.createStudent(studentDTO);
     }
 

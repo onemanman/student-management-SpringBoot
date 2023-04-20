@@ -64,5 +64,6 @@ public class Student {
         return new Student(studentDTO.name,studentDTO.gender,studentDTO.math,studentDTO.biology,studentDTO.literature,studentDTO.age);
     }
 
+
 }
 
