@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.jooq.JSON.json;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -38,54 +38,49 @@ public class StudentControllerTest {
         List<Student> students = new ArrayList<>();
         students.add(new Student(1,"Long","male",8.9,8.1,8.2,15));
         students.add(new Student(2,"Hoang","male",8.6,8.5,8.2,15));
-
         when(studentService.getStudentList()).thenReturn(students);
+
         mockMvc.perform(get("/students")
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                         .andExpect(status().isOk())
-                        .andExpect(content().json(new ObjectMapper().writeValueAsString(students)));
+                        .andExpect(content().json(objectMapper.writeValueAsString(students)));
     }
 
     @Test
     public void testGetStudentById() throws Exception {
         int stt = 1;
         Student student = new Student(stt, "Long", "male", 8.9, 8.1, 8.2, 15);
-
         when(studentService.getStudentById(stt)).thenReturn(student);
 
         mockMvc.perform(get("/students/{stt}", stt)
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                         .andExpect(status().isOk())
-                        .andExpect(content().json(new ObjectMapper().writeValueAsString(student)));
+                        .andExpect(content().json(objectMapper.writeValueAsString(student)));
     }
     @Test
     public void testCreateStudent() throws Exception {
         StudentDTO studentDTO = new StudentDTO("Long", "male", 8.9, 8.1, 8.2, 15);
         Student student = new Student(1, "Long", "male", 8.9, 8.1, 8.2, 15);
+        when(studentService.createStudent(any(StudentDTO.class))).thenReturn(student);
 
-        when(studentService.createStudent(studentDTO)).thenReturn(student);
-        System.out.println(student);
-        System.out.println(json(new ObjectMapper().writeValueAsString(student)));
         mockMvc.perform(post("/students")
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .characterEncoding("UTF-8")
-                        .content(new ObjectMapper().writeValueAsString(studentDTO)))
+                        .content(objectMapper.writeValueAsString(studentDTO)))
                         .andExpect(status().isCreated())
-                        .andExpect(content().json(new ObjectMapper().writeValueAsString(student)));
-
+                        .andExpect(content().json(objectMapper.writeValueAsString(student)));
     }
     @Test
     public void testUpdateStudent() throws Exception {
         Student student = new Student(1, "Long", "male", 8.9, 8.1, 8.2, 15);
-
-        when(studentService.updateStudent(student)).thenReturn(student);
+        when(studentService.updateStudent(any(Student.class))).thenReturn(student);
 
         mockMvc.perform(put("/students/{stt}", student.getStt())
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .characterEncoding("UTF-8")
-                        .content(new ObjectMapper().writeValueAsString(student)))
+                        .content(objectMapper.writeValueAsString(student)))
                         .andExpect(status().isOk())
-                        .andExpect(content().json(new ObjectMapper().writeValueAsString(student)));
+                        .andExpect(content().json(objectMapper.writeValueAsString(student)));
     }
     @Test
     public void testDeleteStudent() throws Exception {

@@ -2,6 +2,7 @@ package com.galaxy.studentmanagement.repository;
 
 import com.galaxy.studentmanagement.dto.StudentDTO;
 import com.galaxy.studentmanagement.model.Student;
+import com.galaxy.studentmanagement.model.StudentResponse;
 
 import java.util.List;
 

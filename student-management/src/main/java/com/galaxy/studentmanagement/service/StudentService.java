@@ -2,8 +2,6 @@ package com.galaxy.studentmanagement.service;
 import com.galaxy.studentmanagement.dto.StudentDTO;
 import com.galaxy.studentmanagement.model.Student;
 import com.galaxy.studentmanagement.model.StudentResponse;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.xml.bind.ValidationException;
 import java.util.List;

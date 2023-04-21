@@ -50,7 +50,7 @@ public class StudentServiceImpl implements StudentService {
             throw new NotFoundException("Student not found with ID: " + id);
         }
         studentRepository.deleteById(id);
-        return new StudentResponse("Delete student sucessfully!");
+        return new StudentResponse("Delete student successfully!");
     }
 
 }
