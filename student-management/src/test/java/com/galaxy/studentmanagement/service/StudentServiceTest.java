@@ -51,12 +51,12 @@ public class StudentServiceTest {
     @Test
     public void testCreateStudent() {
         StudentDTO studentDTO = new StudentDTO("Long","male",8.2,8.9,9.9,16);
-        Student student = new Student(1,"Long","male",8.2,8.9,9.9,16);
-        when(studentRepository.create(studentDTO)).thenReturn(student);
+        Student expectedStudent = new Student(1,"Long","male",8.2,8.9,9.9,16);
+        when(studentRepository.create(studentDTO)).thenReturn(expectedStudent);
 
-        Student studentCreateResult = studentRepository.create(studentDTO);
+        Student actualResult = studentRepository.create(studentDTO);
 
-        assertEquals(studentCreateResult,student);
+        assertEquals(actualResult,expectedStudent);
     }
     @Test
     public void testUpdateStudent(){

@@ -5,13 +5,11 @@ import com.galaxy.studentmanagement.exception.NotFoundException;
 import com.galaxy.studentmanagement.model.Student;
 import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Objects;
 
-import static org.jooq.impl.DSL.jsonbTable;
 import static org.jooq.impl.DSL.table;
 @Repository
 public class StudentRepositoryImpl implements StudentRepository {
